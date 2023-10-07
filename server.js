@@ -29,9 +29,10 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 //rest api
-app.use('*',function(req,res){ 
-    res.sendFile(path.join(__dirname,"./client/build/index.html"));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
 
 //PORT
 const PORT = process.env.PORT || 8080;
